@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react";
 import classes from "./Card.module.css";
 import cn from "classnames";
 
@@ -5,11 +6,7 @@ type CardProps = {
   title: string;
   type: string;
   img: string;
-};
-
-const capitalizeFirst = (word: string) => {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-};
+} & HTMLAttributes<HTMLDivElement>;
 
 const Card = ({ title, type, img, ...rest }: CardProps) => {
   return (
