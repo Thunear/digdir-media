@@ -1,0 +1,32 @@
+{
+  "name": "digdir-media",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@digdir/designsystemet-css": "^0.2.3",
+    "@digdir/designsystemet-react": "^0.55.0",
+    "@digdir/designsystemet-theme": "^0.15.0",
+    "@navikt/aksel-icons": "^6.3.6",
+    "bootstrap": "^5.3.3",
+    "classnames": "^2.5.1",
+    "next": "14.1.4",
+    "normalize.css": "^8.0.1",
+    "react": "^18",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4",
+    "typescript": "^5"
+  }
+}

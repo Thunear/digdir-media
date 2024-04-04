@@ -1,0 +1,23 @@
+.container {
+  height: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  margin-right: 80px;
+}
+
+.middle {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.middle > div {
+  margin-right: 28px;
+}
+
+.right {
+}

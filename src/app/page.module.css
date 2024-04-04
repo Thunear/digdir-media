@@ -1,0 +1,67 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toolbar svg {
+  font-size: 29px;
+  margin-left: 14px;
+}
+
+.searchContainer {
+  position: relative;
+  margin-top: 20px;
+}
+
+.searchContainer input {
+  height: 48px;
+  border-radius: 4px;
+  padding-left: 48px;
+  border: 1px solid rgb(133, 133, 133);
+  outline: none !important;
+  box-shadow: none;
+  width: 350px;
+}
+
+.searchContainer > svg {
+  position: absolute;
+  left: 13px;
+  top: 11px;
+  margin-left: 0;
+  font-size: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 32px;
+}
+
+.modalContent {
+  display: flex;
+  padding-bottom: 32px;
+}
+
+.modalLeft {
+  padding: 50px;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 8px;
+  width: 40%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalLeft img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+}
+
+.modalRight {
+  width: 60%;
+  padding-left: 40px;
+}

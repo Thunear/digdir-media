@@ -1,0 +1,6 @@
+body {
+  background-color: var(--fds-semantic-background-subtle);
+  font-family: "Inter", sans-serif;
+  font-feature-settings: "cv05" 1 !important;
+  color: var(--fds-semantic-surface-neutral-inverted);
+}
