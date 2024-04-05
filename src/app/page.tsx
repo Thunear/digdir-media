@@ -9,24 +9,26 @@ import {
   MagnifyingGlassIcon,
   MenuGridIcon,
   BulletListIcon,
+  DownloadIcon,
 } from "@navikt/aksel-icons";
 import { useRef, useState } from "react";
 
 const cards = [
   {
-    title: "Personer som holder klosser",
+    title: "Personer som holder klosser og går til venstre",
     type: "illustration",
-    img: "img/image1.png",
+    img: "img/image1.svg",
+    variants: ["img/image1-1.svg", "img/image1-2.svg"],
   },
   {
-    title: "Person som sitter med en bok og leser",
+    title: "Person som sitter med en bok og leser på en sakkosekk",
     type: "illustration",
-    img: "img/image2.png",
+    img: "img/image2.svg",
   },
   {
-    title: "Person som springer til høgre med bokser bak seg",
+    title: "Person som løper til høyre med bokser bak seg",
     type: "illustration",
-    img: "img/image3.png",
+    img: "img/image3.svg",
   },
   {
     title: "Digdir logo",
@@ -59,11 +61,17 @@ export default function Home() {
   const modalRef = useRef<HTMLDialogElement>(null);
   const [modalTitle, setModalTitle] = useState<string>("");
   const [modalImg, setModalImg] = useState<string>("");
+  const [variants, setVariants] = useState<string[]>([]);
 
-  const showModal = (title: string, img: string) => {
+  const showModal = (title: string, img: string, variants: string[]) => {
     setModalTitle(title);
     setModalImg(img);
+    setVariants(variants);
     modalRef.current?.showModal();
+  };
+
+  const test = (img: string) => {
+    setModalImg(img);
   };
 
   return (
@@ -83,8 +91,59 @@ export default function Home() {
               <img src={modalImg} alt="" />
             </div>
             <div className={classes.modalRight}>
-              <Button>Last ned SVG</Button>
-              <Button>Last ned PNG</Button>
+              {variants.length > 0 && (
+                <div>
+                  <h3 className={classes.modalTitle}>Varianter</h3>
+                  <div className={classes.variants}>
+                    {variants.map((variant, index) => (
+                      <img
+                        key={index}
+                        src={variant}
+                        alt=""
+                        onClick={() => test(variant)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className={classes.tomato}>
+                <h3 className={classes.modalTitle}>Alternativ tekst</h3>
+                <div>
+                  Been an in any five in felt self-interest, is let of it boss
+                  nature, every we way. Never it that a farther handpainted.
+                </div>
+              </div>
+
+              <div className={classes.tagsContainer}>
+                <h3 className={classes.modalTitle}>Tagger</h3>
+                <div className={classes.tags}>
+                  <div className={classes.tag}>Personer</div>
+                  <div className={classes.tag}>Blå</div>
+                  <div className={classes.tag}>Mat</div>
+                </div>
+              </div>
+
+              <div className={classes.buttons}>
+                <Button
+                  className={classes.btn}
+                  variant="tertiary"
+                  color="second"
+                  size="small"
+                >
+                  <DownloadIcon title="a11y-title" fontSize="1.5rem" />
+                  SVG
+                </Button>
+                <Button
+                  className={classes.btn}
+                  variant="tertiary"
+                  color="second"
+                  size="small"
+                >
+                  <DownloadIcon title="a11y-title" fontSize="1.5rem" />
+                  PNG
+                </Button>
+              </div>
             </div>
           </Modal.Content>
         </Modal.Dialog>
@@ -107,7 +166,9 @@ export default function Home() {
               title={card.title}
               type={card.type}
               img={card.img}
-              onClick={() => showModal(card.title, card.img)}
+              onClick={() =>
+                showModal(card.title, card.img, card.variants || [])
+              }
             />
           ))}
         </div>

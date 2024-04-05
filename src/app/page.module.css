@@ -63,5 +63,69 @@
 
 .modalRight {
   width: 60%;
-  padding-left: 40px;
+  padding: 0px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  top: 18px;
+  right: 90px;
+}
+
+.btn {
+  height: 40px;
+  font-weight: 500;
+}
+
+.variants {
+  display: flex;
+  gap: 24px;
+}
+
+.variants img {
+  width: 100px;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.modalTitle {
+  font-size: 21px;
+  margin-bottom: 16px;
+  margin-top: -2px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tagsContainer {
+}
+
+.tomato > div {
+  margin-bottom: 0 !important;
+  margin-top: -9px;
+  line-height: 1.5em;
+}
+
+.tags {
+  display: flex;
+  gap: 24px;
+}
+
+.tag {
+  font-size: 16px;
+  background-color: var(--fds-brand-alt3-200);
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 2px;
 }
