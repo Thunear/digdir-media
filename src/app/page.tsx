@@ -149,14 +149,40 @@ export default function Home() {
         </Modal.Dialog>
       </Modal.Root>
       <Container>
-        <div className={classes.toolbar}>
-          <div className={classes.searchContainer}>
-            <MagnifyingGlassIcon title="a11y-title" fontSize="1.5rem" />
-            <input type="text" placeholder="Søk her..." />
+        <div className={classes.top}>
+          <h3 className={classes.searchLabel}>Søk etter media</h3>
+          <div className={classes.toolbar}>
+            <div className={classes.searchContainer}>
+              <MagnifyingGlassIcon title="a11y-title" fontSize="1.5rem" />
+              <input type="text" placeholder="Søk her..." />
+            </div>
           </div>
+          <div className={classes.download}>
+            <Button
+              className={classes.btn}
+              variant="tertiary"
+              color="second"
+              size="small"
+            >
+              <DownloadIcon title="a11y-title" fontSize="1.5rem" />
+              Last ned alle illustrasjoner
+            </Button>
+            <Button
+              className={classes.btn}
+              variant="tertiary"
+              color="second"
+              size="small"
+            >
+              <DownloadIcon title="a11y-title" fontSize="1.5rem" />
+              Last ned alle logoer
+            </Button>
+          </div>
+        </div>
+        <div className={classes.bar2}>
+          <div>Viser 12 av 24 media</div>
           <div>
-            <MenuGridIcon title="a11y-title" fontSize="1.5rem" />
-            <BulletListIcon title="a11y-title" fontSize="1.5rem" />
+            <MenuGridIcon title="a11y-title" fontSize="2rem" />
+            <BulletListIcon title="a11y-title" fontSize="2rem" />
           </div>
         </div>
         <div className={classes.cards}>
